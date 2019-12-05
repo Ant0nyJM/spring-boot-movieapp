@@ -3,8 +3,10 @@ package com.imoviedb.webapp.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="UserModel")
 public class User {
 
     @Id
