@@ -12,6 +12,7 @@ import org.springframework.security.web.context.HttpSessionSecurityContextReposi
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 @RestController
 public class LoginController {
@@ -26,7 +27,7 @@ public class LoginController {
 
     @PostMapping(value = "/login")
     public ResponseEntity login(@RequestBody LoginParams params, HttpSession session){
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(params.getUsername(), params.getPassword());
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(params.getUsername(), params.getPassword(),new ArrayList<>());
         try {
             session.setAttribute(
                     HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,

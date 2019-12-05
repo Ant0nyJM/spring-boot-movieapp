@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="UserModel")
-public class User {
+public class ApplicationUser {
 
     @Id
     private String username;
