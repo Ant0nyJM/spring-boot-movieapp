@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MovieRespository extends CrudRepository<Movie, Integer> {
+public interface MovieRespository extends CrudRepository<Movie, String> {
 
-    @Query(value = "select * from movie", nativeQuery = true)
+    @Query(value = "select * from movieapp_motionpicture", nativeQuery = true)
     public List<Movie> getAllMovies();
 }

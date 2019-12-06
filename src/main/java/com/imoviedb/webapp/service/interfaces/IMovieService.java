@@ -5,6 +5,6 @@ import org.springframework.stereotype.Service;
 
 public interface IMovieService {
 
-    Movie updateMovie( int id, Movie newMovie);
+    Movie updateMovie(String id, Movie newMovie);
 
 }

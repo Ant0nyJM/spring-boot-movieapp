@@ -3,33 +3,36 @@ package com.imoviedb.webapp.models;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
-public class Movie implements Serializable {
+@Table(name="movieapp_motionpicture")
+public class Movie{
 
 
 
+
+//    @GeneratedValue(generator = "movie_id_generator")
+//    @SequenceGenerator(
+//            name = "movid_id_generator",
+//            sequenceName = "movie_sequence",
+//            initialValue = 400
+//    )
     @Id
-    @GeneratedValue(generator = "movie_id_generator")
-    @SequenceGenerator(
-            name = "movid_id_generator",
-            sequenceName = "movie_sequence",
-            initialValue = 400
-    )
-    private int id;
+    @Column(name="movie_id")
+    private String id;
+    @Column(name="name")
     private String name;
+    @Column(name="description")
     private String description;
+    @Column(name="release_date")
     private Date release_date;
 
-    public int getId() { return id;  }
+    public String getId() { return id;  }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -15,7 +15,7 @@ public class MovieService implements IMovieService {
     @Autowired
     MovieRespository movieRespository;
 
-    public Movie updateMovie(int id, Movie newMovie){
+    public Movie updateMovie(String id, Movie newMovie){
 
         Optional<Movie> query = movieRespository.findById(id);
         Movie oldMovie;
